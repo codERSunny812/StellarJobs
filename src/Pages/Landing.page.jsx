@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import React from 'react'
 
-const LandingPage = () => {
-  return (
-    <div>LandingPage</div>
-  )
-=======
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -134,7 +127,6 @@ const LandingPage = () => {
 
   );
    
->>>>>>> sunny
 }
 
 export default LandingPage
