@@ -1267,6 +1267,14 @@ electron-to-chromium@^1.5.28:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.31.tgz"
   integrity sha512-QcDoBbQeYt0+3CWcK/rEbuHvwpbT/8SV9T3OSgs6cX1FlcUAkgrkqbg9zLnDrMM/rLamzQwal4LYFCiWk861Tg==
 
+<<<<<<< HEAD
+=======
+embla-carousel-autoplay@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.npmjs.org/embla-carousel-autoplay/-/embla-carousel-autoplay-8.3.0.tgz"
+  integrity sha512-h7DFJLf9uQD+XDxr1NwA3/oFIjsnj/iED2RjET5u6/svMec46IbF1CYPhmB5Q/1Fc0WkcvhPpsEsrtVXQLxNzA==
+
+>>>>>>> sunny
 embla-carousel-react@^8.3.0:
   version "8.3.0"
   resolved "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.3.0.tgz"
