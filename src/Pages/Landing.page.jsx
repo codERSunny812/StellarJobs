@@ -35,7 +35,7 @@ const LandingPage = () => {
         <p className="text-gray-300 text-xs sm:mt-4 sm:text-xl capitalize">explore thousands of job listings or find the perfect candidates</p>
   </section>
 
-  <section className="flex gap-6 justify-center">
+  <section className="flex gap-6 flex-col sm:flex-row sm:justify-center sm:items-center items-center justify-center">
     {/* buttons
      */}
 
@@ -59,7 +59,7 @@ const LandingPage = () => {
           <CarouselContent className="flex gap-5 sm:gap-20 items-center" >
             {
               companies.map(({name,id,path})=>{
-                console.log(name)
+                // console.log(name)
                 return(
                   <CarouselItem key={id} className='basis-1/3 lg: basis-1/6'>
                     <img src={path} alt={name}
@@ -107,7 +107,7 @@ const LandingPage = () => {
         <Accordion type="single" collapsible className="w-full">
           {
             questions.map(({ id,question,answer })=>{
-              console.log(id)
+              // console.log(id)
               return(
                 <AccordionItem value={`item-${id+1}`} key={id}>
                   <AccordionTrigger>{question}</AccordionTrigger>
