@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "./ui/button"
-import {SignedIn,SignedOut, SignIn, UserButton} from '@clerk/clerk-react'
+import {SignedIn,SignedOut, SignIn, UserButton, useUser} from '@clerk/clerk-react'
 import { BriefcaseBusinessIcon, Heart, PenBox } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -11,14 +11,16 @@ const HeaderComponent = () => {
   const [search , setSearch] = useSearchParams(); //just like use state
   console.log(search)
 
+  const {user} = useUser();
+
   useEffect(()=>{
-   if(search.get('sign-in')){
+   if(search?.get('sign-in')){
     setSearch(true)
    }
   },[search])
 
   const handleSigInOverlay = (e)=>{
-   if(e.target === e.currentTarget) {
+   if(e?.target === e?.currentTarget) {
     setSignIn(false);
     setSearch({});
    }
@@ -40,13 +42,19 @@ const HeaderComponent = () => {
 
           <SignedIn>
 
-           {/* show this button only if its recruiter */}
-            <Link to='/post-job'>
-              <Button variant='destructive' className='rounded-full'>
-                <PenBox size={23} className="mr-2" />
-                post a job
-              </Button>
-            </Link>
+ {/* button will be seen only to the recruiter */}
+            {
+              user?.unsafeMetadata?.role == "recruiter" && (
+                < Link to='/post-job'>
+            <Button variant='destructive' className='rounded-full'>
+              <PenBox size={23} className="mr-2" />
+              post a job
+            </Button>
+          </Link>
+              )
+            }
+
+          
 
             <UserButton 
             appearance={{
